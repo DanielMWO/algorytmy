@@ -1,0 +1,2 @@
+# algorytmy
+zadania z algorytmiki
