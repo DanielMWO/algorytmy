@@ -7,10 +7,16 @@ import codecs
 
 if __name__ == '__main__':
     
-    f = open('pantadeusz.txt')
+    f = codecs.open('pantadeusz.txt', 'r', 'UTF-8')
     data = f.read()
     f.close()
+    znaki = ['!' , '(' , ')' , ';' , ':' , '"' , "'" , ',' , '.', '-']
+    for each in znaki:
+        data = data.replace(each, "").lower()
+     
+    
     slowa = data.split()
+    #print (slowa)
      
     
     
@@ -21,17 +27,15 @@ if __name__ == '__main__':
         else:
             zliczak[each] = 1
       
-    # Reversle zliczak jest do bani  bo usuwa podwójne wpisy, trzeba odczytac max a potem znaleœæ petla 20 mniejsztcg 
-    reverse_zliczak = () 
-    for  k, v in zliczak.iteritems():
-        reverse_zliczak[v[k]]
-           
-    counter = sorted(reverse_zliczak, reverse=True)
     
-    for each in counter:
-        print reverse_zliczak[each]
-     
-    print len(reverse_zliczak)   
-    #print data
+    lista =  (sorted(zliczak.values(), reverse=True)[0:19])
+    print (type(lista)) 
+    print (lista)
+       
     
+    for each in lista:
+        for  k, v in zliczak.items():
+            if zliczak[k] == each:
+                print (k,v)
+
     pass
